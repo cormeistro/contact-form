@@ -1,0 +1,83 @@
+/* 
+You will find all of the required styling in this section
+In addition- I added centering & padding to the form
+*/
+
+.contactForm {
+  display: flex;
+  align-items: center;
+  font-family: "Arial", sans-serif;
+  height: 100%;
+  justify-content: center;
+}
+
+.contactForm button {
+  color: var(--white);
+  background: var(--blue);
+  border: none;
+  font-size: 16px;
+  height: 36px;
+}
+
+.contactForm button:hover {
+  background-color: var(--submit-hover);
+  cursor: pointer;
+}
+
+.contactForm form {
+  background: #f0f0f0;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 30px;
+}
+
+.contactForm h1 {
+  font-size: 38px;
+  font-weight: bold;
+}
+
+.contactForm input {
+  background: var(--white);
+  font-size: 16px;
+  height: 36px;
+  padding: 0 10px;
+}
+
+.contactForm input,
+.contactForm textarea {
+  border: solid 1px var(--blue);
+  border-radius: 4px;
+  resize: none;
+}
+
+.contactForm textarea {
+  padding: 10px;
+}
+
+.contactForm label {
+  font-size: 16px;
+}
+
+.inputFields {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.error {
+  color: #ff6868;
+  font-size: 0.65em;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translateY(100%);
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}

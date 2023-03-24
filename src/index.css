@@ -1,0 +1,14 @@
+/* Personal Preference */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Provided color schema */
+:root {
+  --blue: #0087aa;
+  --text: #4a4a4a;
+  --white: #ffffff;
+  --submit-hover: #1997b7;
+}

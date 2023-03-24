@@ -1,4 +1,4 @@
-# contact-form-fe
+# contact-form
 
 Thank you for giving me the opportunity to work on an interview projects. I find that this is a crucial learning tool that will help me understand exactly what companies like yours look for.
 

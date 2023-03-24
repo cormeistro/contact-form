@@ -3,6 +3,8 @@ import { FieldValues, useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 
+const formEndpointURL = "http://localhost:3000/api";
+
 // DEFINE THE FORM SCHEMA USING ZOD
 const schema = z.object({
   firstName: z.string().min(1),
@@ -24,9 +26,27 @@ const ContactForm = () => {
     formState: { errors },
   } = useForm<FormData>({ resolver: zodResolver(schema) });
 
-  // HANDLE THE STORING OF THE DATA UPON SUBMISSION
+  // TURNS FORM FIELDS INTO A JSON OBJECT
+  // CALLS THE BE API VIA formEndpointURL WITH A PUT REQUEST
   const onSubmit = (data: FieldValues) => {
-    console.log(JSON.stringify(data));
+    const jsonData = JSON.stringify(data);
+
+    fetch(formEndpointURL, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: jsonData,
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to save form data");
+        }
+        console.log("Form data saved successfully");
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
 
   // REGISTER FUNCTION RETURNS AN OBJECT OF HTML PROPERTIES
